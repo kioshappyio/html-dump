@@ -11,17 +11,20 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Kios Happy</a>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#">Beranda <i class="fas fa-home"></i></a></li>
                 <li><a href="#">Profil <i class="fas fa-user"></i></a></li>
             </ul>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Cari file..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
         </nav>
     </header>
-
-    <div id="file-search">
-        <input type="text" id="search-input" placeholder="Cari file...">
-    </div>
 
     <section id="files">
         <h2>Daftar File</h2>
@@ -62,10 +65,8 @@
         <div class="profile-card">
             <div class="profile-header">
                 <img src="https://via.placeholder.com/180" alt="Profile Picture" class="profile-img">
-                <div class="profile-info">
-                    <h3>Andika / Keysa</h3>
-                    <p>Developer dan pengusaha digital. Fokus pada teknologi dan inovasi. Saya berkomitmen untuk menciptakan solusi yang mengubah kehidupan masyarakat dengan memanfaatkan teknologi terbaru.</p>
-                </div>
+                <h3>Andika / Keysa</h3>
+                <p>Developer dan pengusaha digital. Fokus pada teknologi dan inovasi. Saya berkomitmen untuk menciptakan solusi yang mengubah kehidupan masyarakat dengan memanfaatkan teknologi terbaru.</p>
             </div>
             <div class="social-icons">
                 <a href="https://twitter.com/username" target="_blank" class="social-icon">
@@ -86,4 +87,4 @@
 
     <script src="https://kioshappyio.github.io/html-dump/script.js"></script>
 </body>
-      </html>
+    </html>
