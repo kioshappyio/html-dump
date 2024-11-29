@@ -25,7 +25,7 @@ function copyUrl(url) {
     // Hapus elemen input sementara
     document.body.removeChild(tempInput);
 
-    // Tampilkan SweetAlert untuk memberi tahu pengguna bahwa URL telah disalin
+    // Tampilkan SweetAlert dengan animasi
     Swal.fire({
         icon: 'success',
         title: 'URL Tersalin!',
@@ -34,6 +34,12 @@ function copyUrl(url) {
         buttonsStyling: false,
         customClass: {
             confirmButton: 'sweet-button'
+        },
+        showClass: {
+            popup: 'animate__animated animate__fadeIn',
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOut',
         }
     });
-      }
+        }
