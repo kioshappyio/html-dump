@@ -1,7 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Elemen navigasi
+    const homeLink = document.getElementById('home-link');
+    const profileLink = document.getElementById('profile-link');
+    const filesSection = document.getElementById('files');
+    const profileSection = document.getElementById('profile');
+    
+    // Menampilkan Daftar File ketika menu "Beranda" diklik
+    homeLink.addEventListener('click', function() {
+        filesSection.style.display = 'block';  // Tampilkan Daftar File
+        profileSection.style.display = 'none'; // Sembunyikan Profil
+    });
+    
+    // Menampilkan Profil Developer ketika menu "Profil" diklik
+    profileLink.addEventListener('click', function() {
+        profileSection.style.display = 'block'; // Tampilkan Profil
+        filesSection.style.display = 'none';    // Sembunyikan Daftar File
+    });
+    
+    // Menampilkan Daftar File secara default ketika halaman pertama kali dimuat
+    filesSection.style.display = 'block';
+    profileSection.style.display = 'none';
+
     // Cari semua tombol salin URL
     const copyButtons = document.querySelectorAll('.copy-url-btn');
     
+    // Tambahkan event listener untuk setiap tombol salin URL
     copyButtons.forEach(button => {
         button.addEventListener('click', function() {
             // Ambil URL dari data-url atribut
@@ -42,4 +65,4 @@ function copyUrl(url) {
             popup: 'animate__animated animate__fadeOut',
         }
     });
-        }
+}
