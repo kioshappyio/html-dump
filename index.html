@@ -11,22 +11,20 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#">Kios Happy</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Beranda <i class="fas fa-home"></i></a></li>
-                <li><a href="#">Profil <i class="fas fa-user"></i></a></li>
+        <nav>
+            <ul>
+                <li><a href="#" id="home-link">Beranda <i class="fas fa-home"></i></a></li>
+                <li><a href="#" id="profile-link">Profil <i class="fas fa-user"></i></a></li>
             </ul>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="Cari file..." class="search-input">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-            </div>
         </nav>
     </header>
 
-    <section id="files">
+    <div id="file-search">
+        <input type="text" id="search-input" placeholder="Cari file...">
+    </div>
+
+    <!-- Bagian Daftar File -->
+    <section id="files" class="content-section">
         <h2>Daftar File</h2>
         <ul id="files-list">
             <li class="file-item">
@@ -60,13 +58,16 @@
         </ul>
     </section>
 
-    <section id="profile">
+    <!-- Bagian Profil Developer -->
+    <section id="profile" class="content-section">
         <h2>Profil Developer</h2>
         <div class="profile-card">
             <div class="profile-header">
                 <img src="https://via.placeholder.com/180" alt="Profile Picture" class="profile-img">
-                <h3>Andika / Keysa</h3>
-                <p>Developer dan pengusaha digital. Fokus pada teknologi dan inovasi. Saya berkomitmen untuk menciptakan solusi yang mengubah kehidupan masyarakat dengan memanfaatkan teknologi terbaru.</p>
+                <div class="profile-info">
+                    <h3>Andika / Keysa</h3>
+                    <p>Developer dan pengusaha digital. Fokus pada teknologi dan inovasi. Saya berkomitmen untuk menciptakan solusi yang mengubah kehidupan masyarakat dengan memanfaatkan teknologi terbaru.</p>
+                </div>
             </div>
             <div class="social-icons">
                 <a href="https://twitter.com/username" target="_blank" class="social-icon">
@@ -86,5 +87,6 @@
     </section>
 
     <script src="https://kioshappyio.github.io/html-dump/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
 </body>
     </html>
