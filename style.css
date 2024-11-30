@@ -10,11 +10,20 @@
     --transition-time: 0.3s;
 }
 
+/* General reset and page container */
+body {
+    background-color: var(--bg-color);
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
 /* Styling untuk SweetAlert button */
 .swal2-confirm.sweet-button,
 .file-info button {
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: var(--border-radius);
     background-color: var(--primary-color);
     color: #fff;
@@ -34,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: #333;
     color: #fff;
     border-radius: var(--border-radius);
@@ -43,7 +52,7 @@
 
 .navbar .logo a {
     color: #fff;
-    font-size: 24px;
+    font-size: 28px;
     text-decoration: none;
     font-weight: bold;
 }
@@ -60,7 +69,7 @@
 .navbar .nav-links a {
     color: #fff;
     text-decoration: none;
-    padding: 8px 15px;
+    padding: 10px 15px;
     border-radius: 5px;
     transition: background-color var(--transition-time), color var(--transition-time);
 }
@@ -77,17 +86,18 @@
 }
 
 .search-input {
-    padding: 8px 12px;
-    border: none;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    transition: border-color var(--transition-time);
 }
 
 .search-btn {
     background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 12px;
     margin-left: 10px;
     cursor: pointer;
     transition: background-color var(--transition-time), transform var(--transition-time);
@@ -103,9 +113,14 @@
     transform: translateY(-2px);
 }
 
+.search-input:focus {
+    border-color: var(--primary-color);
+}
+
 /* Styling untuk file-item */
 #files {
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: 1200px;
 }
 
 #files-list {
@@ -153,18 +168,20 @@
 
 /* Styling untuk profil developer */
 #profile {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .profile-card {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     background-color: var(--bg-color);
     border-radius: var(--border-radius);
-    padding: 20px;
+    padding: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform var(--transition-time), box-shadow var(--transition-time);
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .profile-card:hover {
@@ -176,7 +193,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 2px solid var(--primary-color);
+    border: 3px solid var(--primary-color);
     transition: transform var(--transition-time), box-shadow var(--transition-time);
 }
 
@@ -199,11 +216,11 @@
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .social-icon {
-    font-size: 24px;
+    font-size: 26px;
     color: #333;
     transition: color var(--transition-time), transform var(--transition-time);
 }
@@ -218,6 +235,12 @@
     .navbar {
         flex-direction: column;
         align-items: flex-start;
+        text-align: center;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .file-item {
@@ -229,5 +252,16 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 100%;
     }
+
+    .file-thumbnail img {
+        width: 100px;
+        height: 100px;
     }
+
+    .search-container {
+        justify-content: center;
+        width: 100%;
+    }
+}
