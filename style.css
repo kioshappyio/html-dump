@@ -21,7 +21,6 @@ body {
     justify-content: center;  /* Center content horizontally */
     align-items: center;     /* Center content vertically */
     min-height: 100vh;       /* Make sure body fills the screen height */
-    padding-left: 1px;  
 }
 
 /* Styling untuk SweetAlert button */
