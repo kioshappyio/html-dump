@@ -5,42 +5,26 @@
     --hover-color: #256ca1;
     --text-color: #666;
     --bg-color: #f4f4f4;
-    --accent-color: #ff6600;
     --border-radius: 8px;
     --transition-time: 0.3s;
-}
-
-/* General reset and page container */
-body {
-    background-color: var(--bg-color);
-    font-family: 'Arial', sans-serif;
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;  /* Center content horizontally */
-    align-items: center;     /* Center content vertically */
-    min-height: 100vh;       /* Make sure body fills the screen height */
 }
 
 /* Styling untuk SweetAlert button */
 .swal2-confirm.sweet-button,
 .file-info button {
     font-size: 16px;
-    padding: 12px 25px;
+    padding: 10px 20px;
     border-radius: var(--border-radius);
     background-color: var(--primary-color);
     color: #fff;
     border: none;
-    transition: transform var(--transition-time), background-color var(--transition-time), box-shadow var(--transition-time);
-    margin-left: 10px;  /* Geser tombol sedikit ke kanan */
+    transition: transform var(--transition-time), background-color var(--transition-time);
 }
 
 .swal2-confirm.sweet-button:hover,
 .file-info button:hover {
     background-color: var(--hover-color);
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
 }
 
 /* Styling untuk navbar */
@@ -48,18 +32,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
     background-color: #333;
     color: #fff;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 100%; /* Full width navbar */
-    max-width: 1200px; /* Limit maximum width */
 }
 
 .navbar .logo a {
     color: #fff;
-    font-size: 28px;
+    font-size: 24px;
     text-decoration: none;
     font-weight: bold;
 }
@@ -76,7 +57,7 @@ body {
 .navbar .nav-links a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 5px;
     transition: background-color var(--transition-time), color var(--transition-time);
 }
@@ -93,21 +74,20 @@ body {
 }
 
 .search-input {
-    padding: 10px 15px;
-    border: 2px solid #ddd;
+    padding: 8px 12px;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
-    transition: border-color var(--transition-time);
 }
 
 .search-btn {
     background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
-    padding: 12px;
+    padding: 10px;
     margin-left: 10px;
     cursor: pointer;
-    transition: background-color var(--transition-time), transform var(--transition-time);
+    transition: background-color var(--transition-time);
 }
 
 .search-btn i {
@@ -117,17 +97,11 @@ body {
 
 .search-btn:hover {
     background-color: var(--hover-color);
-    transform: translateY(-2px);
-}
-
-.search-input:focus {
-    border-color: var(--primary-color);
 }
 
 /* Styling untuk file-item */
 #files {
-    margin: 20px auto;
-    max-width: 1200px;
+    margin: 20px 0;
 }
 
 #files-list {
@@ -142,12 +116,6 @@ body {
     margin-bottom: 15px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
-    transition: transform var(--transition-time), box-shadow var(--transition-time);
-}
-
-.file-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .file-thumbnail img {
@@ -156,7 +124,6 @@ body {
     object-fit: cover;
     border-radius: var(--border-radius);
     transition: transform var(--transition-time), box-shadow var(--transition-time);
-    margin-left: 10px; /* Geser gambar thumbnail ke kanan */
 }
 
 .file-thumbnail img:hover {
@@ -176,20 +143,18 @@ body {
 
 /* Styling untuk profil developer */
 #profile {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .profile-card {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     background-color: var(--bg-color);
     border-radius: var(--border-radius);
-    padding: 25px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform var(--transition-time), box-shadow var(--transition-time);
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
 .profile-card:hover {
@@ -201,7 +166,7 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 3px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     transition: transform var(--transition-time), box-shadow var(--transition-time);
 }
 
@@ -224,11 +189,11 @@ body {
 
 .social-icons {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .social-icon {
-    font-size: 26px;
+    font-size: 24px;
     color: #333;
     transition: color var(--transition-time), transform var(--transition-time);
 }
@@ -243,12 +208,6 @@ body {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
-        text-align: center;
-    }
-
-    .navbar .nav-links {
-        flex-direction: column;
-        gap: 10px;
     }
 
     .file-item {
@@ -260,16 +219,5 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 100%;
     }
-
-    .file-thumbnail img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .search-container {
-        justify-content: center;
-        width: 100%;
-    }
-    }
+        }
