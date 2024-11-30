@@ -203,17 +203,11 @@
     transform: scale(1.1);
 }
 
-/* Responsivitas */
+/* Tambahkan responsivitas */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
-        text-align: center;
-    }
-
-    .navbar .nav-links {
-        flex-direction: column;
-        gap: 10px;
     }
 
     .file-item {
