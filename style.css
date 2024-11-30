@@ -5,6 +5,7 @@
     --hover-color: #256ca1;
     --text-color: #666;
     --bg-color: #f4f4f4;
+    --accent-color: #ff6600;
     --border-radius: 8px;
     --transition-time: 0.3s;
 }
@@ -18,13 +19,14 @@
     background-color: var(--primary-color);
     color: #fff;
     border: none;
-    transition: transform var(--transition-time), background-color var(--transition-time);
+    transition: transform var(--transition-time), background-color var(--transition-time), box-shadow var(--transition-time);
 }
 
 .swal2-confirm.sweet-button:hover,
 .file-info button:hover {
     background-color: var(--hover-color);
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Styling untuk navbar */
@@ -36,6 +38,7 @@
     background-color: #333;
     color: #fff;
     border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .logo a {
@@ -87,7 +90,7 @@
     padding: 10px;
     margin-left: 10px;
     cursor: pointer;
-    transition: background-color var(--transition-time);
+    transition: background-color var(--transition-time), transform var(--transition-time);
 }
 
 .search-btn i {
@@ -97,6 +100,7 @@
 
 .search-btn:hover {
     background-color: var(--hover-color);
+    transform: translateY(-2px);
 }
 
 /* Styling untuk file-item */
@@ -116,6 +120,12 @@
     margin-bottom: 15px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
+    transition: transform var(--transition-time), box-shadow var(--transition-time);
+}
+
+.file-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .file-thumbnail img {
