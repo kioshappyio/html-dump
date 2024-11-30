@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
+
 :root {
     --primary-color: #3085d6;
     --hover-color: #256ca1;
@@ -8,24 +10,21 @@
 }
 
 /* Styling untuk SweetAlert button */
-.swal2-confirm.sweet-button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px 20px;
+.swal2-confirm.sweet-button,
+.file-info button {
     font-size: 16px;
+    padding: 10px 20px;
     border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: #fff;
     border: none;
-    cursor: pointer;
-    transition: background-color var(--transition-time), box-shadow var(--transition-time);
+    transition: transform var(--transition-time), background-color var(--transition-time);
 }
 
-.swal2-confirm.sweet-button:hover {
+.swal2-confirm.sweet-button:hover,
+.file-info button:hover {
     background-color: var(--hover-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.swal2-confirm.sweet-button:focus {
-    outline: none;
+    transform: scale(1.1);
 }
 
 /* Styling untuk navbar */
@@ -33,9 +32,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px 20px;
     background-color: #333;
     color: #fff;
+    border-radius: var(--border-radius);
 }
 
 .navbar .logo a {
@@ -45,23 +45,26 @@
     font-weight: bold;
 }
 
-.nav-links {
+.navbar .nav-links {
     display: flex;
     gap: 20px;
 }
 
-.nav-links li {
+.navbar .nav-links li {
     list-style: none;
 }
 
-.nav-links a {
+.navbar .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color var(--transition-time), color var(--transition-time);
 }
 
-.nav-links a:hover {
-    color: var(--primary-color); /* Hover color */
+.navbar .nav-links a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 /* Search Bar Style */
@@ -84,6 +87,7 @@
     padding: 10px;
     margin-left: 10px;
     cursor: pointer;
+    transition: background-color var(--transition-time);
 }
 
 .search-btn i {
@@ -92,7 +96,7 @@
 }
 
 .search-btn:hover {
-    background-color: var(--hover-color); /* Hover color */
+    background-color: var(--hover-color);
 }
 
 /* Styling untuk file-item */
@@ -107,15 +111,17 @@
 
 .file-item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
 
 .file-thumbnail img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
     border-radius: var(--border-radius);
     transition: transform var(--transition-time), box-shadow var(--transition-time);
 }
@@ -125,39 +131,14 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.file-info {
-    flex-grow: 1;
-    padding-left: 20px;
-}
-
 .file-info h3 {
     margin: 0 0 10px;
     font-size: 18px;
     font-weight: bold;
 }
 
-.file-info button {
-    margin-right: 10px;
-    padding: 8px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: transform var(--transition-time), background-color var(--transition-time);
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid var(--primary-color);
-    border-radius: var(--border-radius);
-    background-color: white;
-    color: var(--primary-color);
-}
-
 .file-info button i {
     margin-right: 8px;
-}
-
-.file-info button:hover {
-    transform: scale(1.1);
-    background-color: var(--primary-color);
-    color: white;
 }
 
 /* Styling untuk profil developer */
@@ -168,9 +149,10 @@
 .profile-card {
     display: flex;
     align-items: center;
-    padding: 20px;
+    gap: 15px;
     background-color: var(--bg-color);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform var(--transition-time), box-shadow var(--transition-time);
 }
@@ -180,17 +162,11 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.profile-header {
-    display: flex;
-    align-items: center;
-}
-
 .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-right: 20px;
-    border: 3px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     transition: transform var(--transition-time), box-shadow var(--transition-time);
 }
 
@@ -212,13 +188,13 @@
 }
 
 .social-icons {
-    margin-left: 20px;
+    display: flex;
+    gap: 15px;
 }
 
 .social-icon {
     font-size: 24px;
     color: #333;
-    margin-right: 15px;
     transition: color var(--transition-time), transform var(--transition-time);
 }
 
@@ -229,6 +205,11 @@
 
 /* Tambahkan responsivitas */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .file-item {
         flex-direction: column;
         align-items: flex-start;
@@ -238,24 +219,5 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-
-    .profile-img {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .social-icons {
-        margin-left: 0;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
     }
     }
