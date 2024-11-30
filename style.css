@@ -17,6 +17,10 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;  /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+    min-height: 100vh;       /* Make sure body fills the screen height */
 }
 
 /* Styling untuk SweetAlert button */
@@ -48,6 +52,8 @@ body {
     color: #fff;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Full width navbar */
+    max-width: 1200px; /* Limit maximum width */
 }
 
 .navbar .logo a {
@@ -264,5 +270,4 @@ body {
         justify-content: center;
         width: 100%;
     }
-}
-
+    }
