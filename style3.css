@@ -33,7 +33,6 @@ body {
     color: #fff;
     border: none;
     transition: transform var(--transition-time), background-color var(--transition-time), box-shadow var(--transition-time);
-    margin-left: 15px;  /* Geser tombol sedikit ke kanan */
 }
 
 .swal2-confirm.sweet-button:hover,
@@ -138,7 +137,7 @@ body {
 .file-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;  /* Pastikan elemen tidak bergeser ke kanan */
     margin-bottom: 15px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
@@ -148,10 +147,6 @@ body {
 .file-item:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.file-thumbnail {
-    margin-left: 15px; /* Geser gambar thumbnail ke kanan */
 }
 
 .file-thumbnail img {
@@ -165,6 +160,12 @@ body {
 .file-thumbnail img:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.file-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Pastikan informasi file tidak bergeser */
 }
 
 .file-info h3 {
@@ -275,4 +276,4 @@ body {
         justify-content: center;
         width: 100%;
     }
-}
+    }
