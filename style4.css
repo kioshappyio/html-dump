@@ -1,5 +1,6 @@
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
 
+/* Warna dan Variabel Global */
 :root {
     --primary-color: #3085d6;
     --hover-color: #256ca1;
@@ -9,30 +10,12 @@
     --transition-time: 0.3s;
 }
 
-/* Styling untuk SweetAlert button */
-.swal2-confirm.sweet-button,
-.file-info button {
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    transition: transform var(--transition-time), background-color var(--transition-time);
-}
-
-.swal2-confirm.sweet-button:hover,
-.file-info button:hover {
-    background-color: var(--hover-color);
-    transform: scale(1.1);
-}
-
-/* Styling untuk navbar */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: #333;
     color: #fff;
     border-radius: var(--border-radius);
@@ -47,6 +30,7 @@
 
 .navbar .nav-links {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
@@ -58,64 +42,120 @@
     color: #fff;
     text-decoration: none;
     padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color var(--transition-time), color var(--transition-time);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-time);
 }
 
 .navbar .nav-links a:hover {
     background-color: var(--primary-color);
-    color: #fff;
 }
 
-/* Search Bar Style */
+/* Dropdown Menu */
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color var(--transition-time);
+}
+
+.navbar .dropdown-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.navbar .dropdown-content li {
+    list-style: none;
+}
+
+.navbar .dropdown-content a {
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background-color var(--transition-time);
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: var(--hover-color);
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search Bar */
 .search-container {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .search-input {
     padding: 8px 12px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-btn {
     background-color: var(--primary-color);
+    color: #fff;
     border: none;
-    border-radius: 5px;
     padding: 10px;
-    margin-left: 10px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     transition: background-color var(--transition-time);
-}
-
-.search-btn i {
-    color: #fff;
-    font-size: 18px;
 }
 
 .search-btn:hover {
     background-color: var(--hover-color);
 }
 
-/* Styling untuk file-item */
+/* File List */
 #files {
     margin: 20px 0;
+    padding: 15px;
 }
 
 #files-list {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
 .file-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .file-thumbnail img {
@@ -123,27 +163,18 @@
     height: 80px;
     object-fit: cover;
     border-radius: var(--border-radius);
-    transition: transform var(--transition-time), box-shadow var(--transition-time);
-}
-
-.file-thumbnail img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .file-info h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
+    margin: 0;
+    font-size: 16px;
     font-weight: bold;
 }
 
-.file-info button i {
-    margin-right: 8px;
-}
-
-/* Styling untuk profil developer */
+/* Profil Developer */
 #profile {
     margin-top: 30px;
+    padding: 15px;
 }
 
 .profile-card {
@@ -151,15 +182,9 @@
     align-items: center;
     gap: 15px;
     background-color: var(--bg-color);
-    border-radius: var(--border-radius);
     padding: 20px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform var(--transition-time), box-shadow var(--transition-time);
-}
-
-.profile-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .profile-img {
@@ -167,12 +192,6 @@
     height: 100px;
     border-radius: 50%;
     border: 2px solid var(--primary-color);
-    transition: transform var(--transition-time), box-shadow var(--transition-time);
-}
-
-.profile-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .profile-info h3 {
@@ -193,7 +212,7 @@
 }
 
 .social-icon {
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
     transition: color var(--transition-time), transform var(--transition-time);
 }
@@ -208,10 +227,9 @@
     .navbar {
         flex-direction: column;
         align-items: flex-start;
-        text-align: center;
     }
 
-    .navbar .nav-links {
+    .nav-links {
         flex-direction: column;
         gap: 10px;
     }
@@ -226,4 +244,4 @@
         align-items: center;
         text-align: center;
     }
-  }
+    }
